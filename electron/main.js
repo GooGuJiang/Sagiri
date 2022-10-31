@@ -21,10 +21,16 @@ function createWindow () {
       //titleBarStyle: 'hidden',
       //titleBarOverlay: true,
       webPreferences: {
+        nodeIntegration: true,
         preload: path.join(__dirname, 'preload.js')
       }
     })
-    mainWindow.loadURL("http://localhost:3000/")
+    
+    mainWindow.loadURL("http://localhost:3000/");
+    mainWindow.on('ready-to-show', () => {
+      mainWindow.show();
+      mainWindow.focus();
+    });
   } else { 
     const mainWindow = new BrowserWindow({
       width: 1000,
@@ -43,11 +49,12 @@ function createWindow () {
         preload: path.join(__dirname, 'preload.js')
       }
     })
-    mainWindow.loadURL(url.format({
-      pathname:path.join(__dirname, './build/index.html'), 
-      protocol:'file:', 
-      slashes:true 
-    }))
+    mainWindow.loadURL(path.join("file://", __dirname, "/build/index.html"));
+    //mainWindow.loadURL(url.format({
+    //  pathname:path.join(__dirname, './build/index.html'), 
+    //  protocol:'file:', 
+    //  slashes:true 
+    //}))
   }
 
 

@@ -9,19 +9,44 @@ const mode = process.argv[2];
 
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
-
-  // and load the index.html of the app.
   //判断是否是开发模式 
   if(mode === 'dev') { 
+    const mainWindow = new BrowserWindow({
+      width: 1000,
+      height: 630,
+      minWidth: 800,
+      minHeight: 600,
+      title:"Sagiri DEV",
+      //frame:false,
+      titleBarStyle: 'hidden',
+      titleBarOverlay: {
+        color: '#2f3241',
+        symbolColor: '#74b1be',
+        height: 60
+      },
+      webPreferences: {
+        preload: path.join(__dirname, 'preload.js')
+      }
+    })
     mainWindow.loadURL("http://localhost:3000/")
   } else { 
+    const mainWindow = new BrowserWindow({
+      width: 1000,
+      height: 630,
+      minWidth: 800,
+      minHeight: 600,
+      title:"Sagiri",
+      //frame: false,
+      titleBarStyle: 'hidden',
+      titleBarOverlay: {
+        color: '#2f3241',
+        symbolColor: '#74b1be',
+        height: 60
+      },
+      webPreferences: {
+        preload: path.join(__dirname, 'preload.js')
+      }
+    })
     mainWindow.loadURL(url.format({
       pathname:path.join(__dirname, './build/index.html'), 
       protocol:'file:', 

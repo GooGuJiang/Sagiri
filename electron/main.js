@@ -17,13 +17,9 @@ function createWindow () {
       minWidth: 800,
       minHeight: 600,
       title:"Sagiri DEV",
-      //frame:false,
-      titleBarStyle: 'hidden',
-      titleBarOverlay: {
-        color: '#2f3241',
-        symbolColor: '#74b1be',
-        height: 60
-      },
+      frame:true,
+      //titleBarStyle: 'hidden',
+      //titleBarOverlay: true,
       webPreferences: {
         preload: path.join(__dirname, 'preload.js')
       }
@@ -41,7 +37,7 @@ function createWindow () {
       titleBarOverlay: {
         color: '#2f3241',
         symbolColor: '#74b1be',
-        height: 60
+        height: 30
       },
       webPreferences: {
         preload: path.join(__dirname, 'preload.js')

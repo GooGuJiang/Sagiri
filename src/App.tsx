@@ -1,17 +1,11 @@
 import React from 'react';
-import Card from '@mui/material/Card';
+import Player from './components/Player';
 
 
 function App() {
   return (
     <>
-    <div>
-      <Card style={{
-        margin : "10px",
-        height:"100px",
-      }}
-      >Hello World</Card>
-    </div>
+      <Player></Player>
     </>
   );
 }

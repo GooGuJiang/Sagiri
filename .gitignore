@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+SearchImage/.idea/misc.xml
+SearchImage/.idea/workspace.xml
+SearchImage/.idea/vcs.xml
+SearchImage/.idea
